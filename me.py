@@ -1,16 +1,23 @@
 import functools
-x= input("Enter the nunber : ")
+x = input("Enter the number : ")
+
+
 def numbers(x):
     i = 0
     result_list = []
-    while i <int(x):
+    while i < int(x):
         i = i+1
         result_list.append(i)
     return result_list
 
-try:
-    n = functools.reduce(lambda x,y : x*y ,numbers(x))
-except ValueError as e :
-   print("Enter numbers only!")
+
+if int(x) == 0:
+    print(1)
 else:
-   print(int(x),"! = ",n) 
+
+    try:
+        n = functools.reduce(lambda x, y: x*y, numbers(x))
+    except ValueError as e:
+        print("Enter numbers only!")
+    else:
+        print(int(x), "! = ", n)
